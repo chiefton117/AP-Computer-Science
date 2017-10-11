@@ -1,0 +1,35 @@
+Geometry Joe's Pizza Parlor
+Customer G. Hopper
+3 Medium Pizza Cheese	$16.96
+Tax			$1.19
+Delivery Charge		$1.82
+Total			$19.97
+Thank you for your order
+
+Geometry Joe's Pizza Parlor
+Customer B. Gates
+2 Small Veggie Pizza Mushrooms Roasted Red Peppers Artichoke Hearts	$15.69
+1 Large Meat Lover Pizza Pepperoni Sausage BBQ Chicken			$16.26
+Tax									$2.24
+Delivery Charge								$3.42
+Total									$37.60
+Thank you for your order
+
+Geometry Joe's Pizza Parlor
+Customer J. Gosling
+1 Large Pizza Pepperoni Extra Cheese	$12.94
+2 Small Pizza Mushroom Sausage		$12.28
+1 Medium Pizza Everything		$32.52
+Tax					$4.04
+Delivery Charge				$6.18
+Total					$67.96
+Thank you for your order
+
+Geometry Joe's Pizza ParlorCustomer	T. Harrold
+1 Large Pizza Cheese		$12.94
+4 Medium Pizza Everything	$12.28
+5 Small Pizza Everything	$32.52
+Tax				$4.04
+Delivery Charge			$6.18
+Total				$67.96
+Thank you for your order
