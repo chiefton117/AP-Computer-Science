@@ -8,11 +8,15 @@ public class Location {
 	public Location(String input) {
 		location = input;
 	}
-	private String getCity() {
-		city = location.substring(location.length() - 3, location.length() - 1);
-		return city;
+	public String getCity() {
+		String[] tokens = this.toString().split(",");
+		return tokens[1];
 	}
-	private String getState() {
-		return state;
+	public String getState() {
+		String[] tokens = this.toString().split(",");
+		return tokens[2];
+	}
+	public String toString() {
+		return location.toString();
 	}
 }

@@ -2,10 +2,10 @@ package zipCodes2;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Arrays;
+import java.util.Scanner;
 
 public class Zipcode {
 	private String zipcode;
-	private File cities = new File("ZipCodesCity.txt");
 
 	public Zipcode(String input) {
 		zipcode = input;
@@ -16,7 +16,7 @@ public class Zipcode {
 	private String getZip() {
 		return zipcode;
 	}
-	public boolean isZip() {
+	private boolean isZip() {
 		boolean isZip = true;
 		if(this.toString().substring(1, 2).equals("|") || this.toString().substring(1, 2).equals(":")) {
 			isZip = false;
@@ -81,8 +81,25 @@ public class Zipcode {
 		}
 		return converted;
 	}
-	public String getLocation() {
-		return zipcode;
+	public String getLocation() throws FileNotFoundException {
+		File cities = new File("ZipCodesCity.txt");
+		Scanner cityParse = new Scanner(cities);
+		String currentCity;
+		String currentCityZip;
+		String location = "";
+		
+		while(cityParse.hasNextLine()) {
+			currentCity = cityParse.nextLine();
+			currentCityZip = currentCity.substring(0, 5);
+				if (zipcode.equals(currentCityZip)) {
+					
+					Location city = new Location(currentCity);
+					Location state = new Location(currentCity);
+					location = city.getCity() + " " + state.getState();
+					
+				}
+		}
+		return zipcode + " " + location;
 	}
 
 }

@@ -6,35 +6,44 @@ import java.util.Scanner;
 
 public class zipRunner {
 	public static void main(String[] args) throws IOException
-	  {
+	{
 		File zipBarCodes = new File ("ZipBarCodes.txt");
 		File zipCodes = new File ("ZipCodes.txt");
-		
+
 		String[] barcodes = makearray(zipBarCodes);
 		String[] zipcodes = makearray(zipCodes);
-		
+
 		printArray(barcodes);
 		printArray(zipcodes);
+		printZips(zipCodes);
 		
-		//makeObjects(barcodes);
-		Barcode first = new Barcode(barcodes[0]);
-		System.out.println(first);
-	  }
+	}
+	public static void printZips(File zipCodes) throws IOException {
+		String zipCode;
+		Scanner zipParse = new Scanner(zipCodes);
+		while(zipParse.hasNextLine()) {
+			zipCode = zipParse.nextLine();
+			Zipcode zip = new Zipcode(zipCode);
+			System.out.println(zip.getLocation());
+		}
+		
+		
+	}
 	public static String[] makearray(File file)  throws IOException
 	{
-		
+
 		Scanner in = new Scanner(file);
 		int length = 0;
 		int openPosition = 0;
-		
-		
+
+
 		while(in.hasNextLine())
 		{
 			in.nextLine();
 			length++;
 		}
 		String[] result = new String[length];
-		
+
 		in = new Scanner(file); //start over 
 		while(in.hasNextLine())
 		{
@@ -42,8 +51,8 @@ public class zipRunner {
 			openPosition++;
 		}
 		in.close();
-		return (result);
-		
+		return result;
+
 	}
 	public static void printArray(String[] array)
 	{
@@ -51,15 +60,4 @@ public class zipRunner {
 			System.out.println(array[i]);
 		System.out.println();  //casual line break
 	}
-	/*
-	public static void makeObjects(String[] x)
-	{
-		//barcode one = new barcode(x[0]);
-		for(int i = 0; i < x.length; i++)
-		{
-			barcode ("bar" + [i]) = new barcode(x[i]);
-		}
-		
-	}
-	*/
 }
