@@ -1,8 +1,6 @@
 package zipCodes2;
 
 public class Location {
-	private String city;
-	private String state;
 	private String location;
 	
 	public Location(String input) {

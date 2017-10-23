@@ -1,7 +1,6 @@
 package zipCodes2;
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class Zipcode {
@@ -10,6 +9,7 @@ public class Zipcode {
 	public Zipcode(String input) {
 		zipcode = input;
 	}
+
 	public void setZip(String zip) {
 		zipcode = zip;
 	}
@@ -34,10 +34,10 @@ public class Zipcode {
 	 * If the given input is a barcode, converts to a zipcode. Otherwise, returns the zipcode.
 	 * @return zipcode(converted or not)
 	 */
-	public String toZip() {
+	public Zipcode toZip() {
 		String converted = this.toString();
 		if (this.isZip()) {
-			System.out.println("Input is already a zipcode!");
+			return this;
 		}
 		else {
 			String[] convertedZipArray = new String[6];
@@ -77,29 +77,36 @@ public class Zipcode {
 			if (checkSum % 10 != 0) {
 				convertedZip = "Error - Invalid check digit!";
 			}
-			return convertedZip;
+			Zipcode convertedOb = new Zipcode(convertedZip);
+			return convertedOb;
 		}
-		return converted;
+
 	}
 	public String getLocation() throws FileNotFoundException {
-		File cities = new File("ZipCodesCity.txt");
-		Scanner cityParse = new Scanner(cities);
-		String currentCity;
-		String currentCityZip;
-		String location = "";
-		
-		while(cityParse.hasNextLine()) {
-			currentCity = cityParse.nextLine();
-			currentCityZip = currentCity.substring(0, 5);
+		if(this.isZip()) {
+			File cities = new File("ZipCodesCity.txt");
+			Scanner cityParse = new Scanner(cities);
+			String currentCity;
+			String currentCityZip;
+			String location = "";
+
+			while(cityParse.hasNextLine()) {
+				currentCity = cityParse.nextLine();
+				currentCityZip = currentCity.substring(0, 5);
 				if (zipcode.equals(currentCityZip)) {
-					
+
 					Location city = new Location(currentCity);
 					Location state = new Location(currentCity);
 					location = city.getCity() + " " + state.getState();
-					
-				}
-		}
-		return zipcode + " " + location;
-	}
 
+				}
+			}
+			cityParse.close();
+			return location;
+		}
+		else {
+			return this.toZip().getLocation();
+
+		}
+	}
 }

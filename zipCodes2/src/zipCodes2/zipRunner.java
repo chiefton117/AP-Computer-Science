@@ -12,21 +12,21 @@ public class zipRunner {
 
 		String[] barcodes = makearray(zipBarCodes);
 		String[] zipcodes = makearray(zipCodes);
-
-		printArray(barcodes);
-		printArray(zipcodes);
-		printZips(zipCodes);
-		
-	}
-	public static void printZips(File zipCodes) throws IOException {
-		String zipCode;
-		Scanner zipParse = new Scanner(zipCodes);
-		while(zipParse.hasNextLine()) {
-			zipCode = zipParse.nextLine();
-			Zipcode zip = new Zipcode(zipCode);
-			System.out.println(zip.getLocation());
+		for(String zipcode: zipcodes) {
+			Zipcode zipOb = new Zipcode(zipcode);
+			System.out.println(zipcode + " " + zipOb.getLocation());
 		}
-		
+		System.out.println("");
+		for(String barcode: barcodes) {
+			Zipcode barOb = new Zipcode(barcode);
+			System.out.println(barcode + "    ------->    " + barOb.toZip());
+			String location = barOb.getLocation();
+			if(location == "") {
+				location = "No Location Found";
+			}
+			System.out.println(location);
+			System.out.println();
+		}
 		
 	}
 	public static String[] makearray(File file)  throws IOException
@@ -35,7 +35,6 @@ public class zipRunner {
 		Scanner in = new Scanner(file);
 		int length = 0;
 		int openPosition = 0;
-
 
 		while(in.hasNextLine())
 		{
