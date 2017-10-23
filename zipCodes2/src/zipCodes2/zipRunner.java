@@ -14,17 +14,15 @@ public class zipRunner {
 		String[] zipcodes = makearray(zipCodes);
 		for(String zipcode: zipcodes) {
 			Zipcode zipOb = new Zipcode(zipcode);
-			System.out.println(zipcode + " " + zipOb.getLocation());
+			System.out.println(zipcode + " " + zipOb.printLocation());
 		}
 		System.out.println("");
 		for(String barcode: barcodes) {
 			Zipcode barOb = new Zipcode(barcode);
 			System.out.println(barcode + "    ------->    " + barOb.toZip());
-			String location = barOb.getLocation();
-			if(location == "") {
-				location = "No Location Found";
-			}
-			System.out.println(location);
+			String location = barOb.printLocation();
+			
+			
 			System.out.println();
 		}
 		

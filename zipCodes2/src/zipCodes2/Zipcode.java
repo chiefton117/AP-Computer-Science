@@ -82,7 +82,7 @@ public class Zipcode {
 		}
 
 	}
-	public String getLocation() throws FileNotFoundException {
+	public String printLocation() throws FileNotFoundException {
 		if(this.isZip()) {
 			File cities = new File("ZipCodesCity.txt");
 			Scanner cityParse = new Scanner(cities);
@@ -94,18 +94,20 @@ public class Zipcode {
 				currentCity = cityParse.nextLine();
 				currentCityZip = currentCity.substring(0, 5);
 				if (zipcode.equals(currentCityZip)) {
-
 					Location city = new Location(currentCity);
 					Location state = new Location(currentCity);
 					location = city.getCity() + " " + state.getState();
-
+					if(location == "") {
+						location = "No Location Found";
+					}
+					System.out.println(location);
 				}
 			}
 			cityParse.close();
 			return location;
 		}
 		else {
-			return this.toZip().getLocation();
+			return this.toZip().printLocation();
 
 		}
 	}
