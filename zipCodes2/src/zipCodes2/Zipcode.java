@@ -97,11 +97,12 @@ public class Zipcode {
 					Location city = new Location(currentCity);
 					Location state = new Location(currentCity);
 					location = city.getCity() + " " + state.getState();
-					if(location == "") {
+					if (city.getCity() == null) { //THIS
 						location = "No Location Found";
 					}
 					System.out.println(location);
 				}
+
 			}
 			cityParse.close();
 			return location;

@@ -12,20 +12,22 @@ public class zipRunner {
 
 		String[] barcodes = makearray(zipBarCodes);
 		String[] zipcodes = makearray(zipCodes);
+
 		for(String zipcode: zipcodes) {
 			Zipcode zipOb = new Zipcode(zipcode);
-			System.out.println(zipcode + " " + zipOb.printLocation());
+			System.out.println(zipcode);
+			zipOb.printLocation();
+			System.out.println();
 		}
+
 		System.out.println("");
 		for(String barcode: barcodes) {
 			Zipcode barOb = new Zipcode(barcode);
 			System.out.println(barcode + "    ------->    " + barOb.toZip());
-			String location = barOb.printLocation();
-			
-			
-			System.out.println();
+			barOb.printLocation();
+			System.out.println("");
 		}
-		
+
 	}
 	public static String[] makearray(File file)  throws IOException
 	{
