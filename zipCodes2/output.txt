@@ -1,0 +1,108 @@
+Print option 2 or 3?
+1
+Please choose a valid option
+2
+59043
+LAME DEER MT
+Postal Barcode- |:|:|:|:|::||::::|::|::||:|
+Readable Barcode- | :|:|: |:|:: ||::: :|::| ::||:  |
+
+16058
+TURKEY CITY PA
+Postal Barcode- |:::||:||::||::::|:|:|::|:|
+Readable Barcode- | :::|| :||:: ||::: :|:|: |::|:  |
+
+21020
+BORING MD
+Postal Barcode- |::|:|:::||||:::::|:|||:::|
+Readable Barcode- | ::|:| :::|| ||::: ::|:| ||:::  |
+
+29395
+DISNEY DIRECT MARKETING SC
+JONESVILLE SC
+Postal Barcode- |::|:||:|::::||:|:|:::|:|:|
+Readable Barcode- | ::|:| |:|:: ::||: |:|:: :|:|:  |
+
+25259
+LINDEN WV
+LOONEYVILLE WV
+TARIFF WV
+Postal Barcode- |::|:|:|:|:::|:|:|:|:|:|::|
+Readable Barcode- | ::|:| :|:|: ::|:| :|:|: |:|::  |
+
+05042
+EAST RYEGATE VT
+MOSQUITOVILLE VT
+RYEGATE VT
+RYEGATE CORNER VT
+Postal Barcode- |||::::|:|:||::::|::|::|:||
+Readable Barcode- | ||::: :|:|: ||::: :|::| ::|:|  |
+
+40122
+FORT KNOX KY
+Postal Barcode- |:|::|||::::::||::|:|::|:||
+Readable Barcode- | :|::| ||::: :::|| ::|:| ::|:|  |
+
+99755
+DENALI NATIONAL PARK AK
+DENALI PARK AK
+HEALY AK
+Postal Barcode- ||:|::|:|::|:::|:|:|::|:|:|
+Readable Barcode- | |:|:: |:|:: |:::| :|:|: :|:|:  |
+
+90210
+BEVERLY HILLS CA
+Postal Barcode- ||:|::||:::::|:|:::||||:::|
+Readable Barcode- | |:|:: ||::: ::|:| :::|| ||:::  |
+
+20050
+PENTAGON DC
+WASHINGTON DC
+Postal Barcode- |::|:|||:::||::::|:|:||:::|
+Readable Barcode- | ::|:| ||::: ||::: :|:|: ||:::  |
+
+Print option 2 or 3?
+3
+||:|:::||::||:::::||:|:|::::||:|    ------->    96039
+HAPPY CAMP CA
+
+|:||::|:|:::::||:|::|::||:|:::||    ------->    69143
+HERSHEY NE
+
+|:|:|:|:|::|:|:::::|||:|::|:::||    ------->    59919
+HUNGRY HORSE MT
+
+||:::|:|:|:::||::::||::|:|::|:||    ------->    75312
+DALLAS TX
+READER'S DIGEST TX
+
+||:::||:::|::||:||::::||::|:::||    ------->    77306
+CONROE TX
+CUT AND SHOOT TX
+
+||:|::::|:||:::|:||:::|::|:::|||    ------->    Error - Invalid check digit!
+No Location Found
+
+||||:::::||:|:|::::||||:::::||:|    ------->    Error - Invalid check digit!
+No Location Found
+
+||:::|:|:|::::||:|:|::||:::||::|    ------->    75156
+ENCHANTED OAK TX
+ENCHANTED OAKS TX
+GUN BARREL CITY TX
+GUN BARREL CY TX
+MABANK TX
+
+||::|::|:|:::||:::|:|:::||:::|||    ------->    85321
+AJO AZ
+WHY AZ
+
+|::|:|||:::::||::|:|::|:|::|:|:|    ------->    20355
+PENTAGON DC
+WASHINGTON DC
+
+||:|:::::|||:::|::||:||:::||:::|    ------->    91730
+CUCAMONGA CA
+RANCHO CUCAMONGA CA
+RCH CUCAMONGA CA
+

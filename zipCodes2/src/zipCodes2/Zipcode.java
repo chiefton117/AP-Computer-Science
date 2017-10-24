@@ -18,8 +18,8 @@ public class Zipcode {
 		return zipcode;
 	}
 	/**
-	 * Checks to see if inputted value is a Zipcode.
-	 * @return Boolean value
+	 * Checks to see if input value is a Zipcode.
+	 * @return Boolean value (true if Zipcode, otherwise false)
 	 */
 	private boolean isZip() {
 		boolean isZip = true;
@@ -34,8 +34,8 @@ public class Zipcode {
 		return zipcode.toString();
 	}
 	/**
-	 * If the given input is a barcode, converts to a zipcode. Otherwise, returns the zipcode.
-	 * @return zipcode(converted or not) as type Zipcode
+	 * If the given input is a Barcode, converts to a Zipcode. Otherwise, returns the Zipcode.
+	 * @return Zipcode(converted or not) as type Zipcode
 	 */
 	public Zipcode toZip() {
 		String converted = this.toString();
@@ -97,8 +97,8 @@ public class Zipcode {
 			String currentCity;
 			String currentCityZip;
 			String location = "";
-
-			while(cityParse.hasNextLine()) {
+					
+			while(cityParse.hasNextLine()) { //For every passed item, checks against CityZipCodes.txt and prints matches
 				currentCity = cityParse.nextLine();
 				currentCityZip = currentCity.substring(0, 5);
 				if (zipcode.equals(currentCityZip)) {
