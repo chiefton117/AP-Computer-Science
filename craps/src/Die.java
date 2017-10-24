@@ -15,7 +15,7 @@ public class Die
 	 */
 	public void roll()
 	{
-		dots = (int) (Math.random() * 5 + 1);
+		dots = (int) (Math.random() * 6 + 1);
 	}
 	
 	/**

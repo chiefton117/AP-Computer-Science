@@ -21,6 +21,7 @@ public class zipRunner {
 		}
 
 		System.out.println("");
+		
 		for(String barcode: barcodes) {
 			Zipcode barOb = new Zipcode(barcode);
 			System.out.println(barcode + "    ------->    " + barOb.toZip());

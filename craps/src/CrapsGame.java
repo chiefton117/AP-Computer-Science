@@ -14,14 +14,20 @@ public class CrapsGame
    */
   public int processRoll(int total)
   {
-	int result=0;
-
-	Die dice1 = new Die();
-	Die dice2 = new Die();
-	dice1.roll();
-	dice2.roll();
+	int result= 0;
 	
-
+	if (total == point || total == 7 || total == 11) {
+		result = 1;
+	}
+	else if (total == 2 || total == 3 || total == 12) {
+		result = -1;
+	}
+	else {
+		result = 0;
+	}
+	
+	
+	point = total;
     return result;
   }
 

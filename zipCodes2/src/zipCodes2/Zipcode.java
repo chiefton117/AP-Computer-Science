@@ -9,13 +9,18 @@ public class Zipcode {
 	public Zipcode(String input) {
 		zipcode = input;
 	}
-
+	//Sets Zipcode
 	public void setZip(String zip) {
 		zipcode = zip;
 	}
+	//Returns Zipcode
 	private String getZip() {
 		return zipcode;
 	}
+	/**
+	 * Checks to see if inputted value is a Zipcode.
+	 * @return Boolean value
+	 */
 	private boolean isZip() {
 		boolean isZip = true;
 		if(this.toString().substring(1, 2).equals("|") || this.toString().substring(1, 2).equals(":")) {
@@ -24,15 +29,13 @@ public class Zipcode {
 		}
 		return isZip;
 	}
-	/**
-	 * Represents the string value of the Zipcode object
-	 */
+	//Represents the string value of the Zipcode object
 	public String toString() {
 		return zipcode.toString();
 	}
 	/**
 	 * If the given input is a barcode, converts to a zipcode. Otherwise, returns the zipcode.
-	 * @return zipcode(converted or not)
+	 * @return zipcode(converted or not) as type Zipcode
 	 */
 	public Zipcode toZip() {
 		String converted = this.toString();
@@ -82,6 +85,11 @@ public class Zipcode {
 		}
 
 	}
+	/**
+	 * Finds the location of a Barcode or Zipcode, printing the result as a Location associated with a Zipcode.
+	 * @return Location of Zipcode object as associated in ZipCodesCity.txt as type String
+	 * @throws FileNotFoundException
+	 */
 	public String printLocation() throws FileNotFoundException {
 		if(this.isZip()) {
 			File cities = new File("ZipCodesCity.txt");
@@ -97,12 +105,13 @@ public class Zipcode {
 					Location city = new Location(currentCity);
 					Location state = new Location(currentCity);
 					location = city.getCity() + " " + state.getState();
-					if (city.getCity() == null) { //THIS
-						location = "No Location Found";
-					}
 					System.out.println(location);
 				}
-
+				if (zipcode.equals("Error - Invalid check digit!")) {
+					location = "No Location Found";
+					System.out.println(location);
+					break;
+				}
 			}
 			cityParse.close();
 			return location;
