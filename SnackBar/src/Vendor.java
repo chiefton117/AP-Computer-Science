@@ -9,6 +9,8 @@ public class Vendor
 	private int stock;
 	private int deposited;
 	private int change;
+	private static double totalSales;
+	
 	/**
 	 * Constructs a Vendor
 	 * @param price the price of a single item in cents (int)
@@ -21,7 +23,14 @@ public class Vendor
 		deposited = 0;
 		change = 0;
 	}
-
+	
+	
+	public static double getTotalSales() {
+		double temp = totalSales;
+		totalSales = 0;
+		return temp;
+	}
+	
 	/**
 	 * Sets the quantity of items in stock.
 	 * @param qty number of items to place in stock (int)
@@ -72,8 +81,10 @@ public class Vendor
 	{
 		if(deposited >= price && stock > 0) {
 			stock --;
+			totalSales += (price / 100);
 			change = deposited - price;
 			deposited = 0;
+			
 			return true;
 		}
 		else {

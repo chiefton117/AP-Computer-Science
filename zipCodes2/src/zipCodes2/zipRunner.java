@@ -1,9 +1,16 @@
+
 package zipCodes2;
 
 import java.io.File;
 import java.io.IOException;
 import java.util.Scanner;
-
+/**
+ * 
+ * An improvement on the Zipcodes project now utilizing advanced concepts such as multiple classes and objects
+ * @author Tim Harrold
+ * @author Dan Krasnonosenkikh
+ *
+ */
 public class zipRunner {
 	public static void main(String[] args) throws IOException
 	{
@@ -16,19 +23,22 @@ public class zipRunner {
 		Scanner in = new Scanner(System.in); //Scanner to take user choice, deciding which option to print
 		System.out.println("Print option 2 or 3?");
 		String choice = in.next();
-		
+
 		while(!(choice.equals("2")) && !(choice.equals("3"))) { //Assures user to enter acceptable value
 			System.out.println("Please choose a valid option");
 			choice = in.next();
 		}
-		
+
 		if(choice.equals("2")) { //Options 1 & 2
 
 			for(String zipcode: zipcodes) { 
 				Zipcode zipOb = new Zipcode(zipcode); //creates barcode and zipcode of the same location
 				Barcode barOb = new Barcode(zipcode); // see line above
 				System.out.println(zipcode); 
-				zipOb.printLocation(); 
+				String location = zipOb.printLocation(); //Print statement for locations
+				if(location.equals("")) {
+					System.out.println("No Location Found");
+				}
 				readablePostalBarcodes(barOb); 
 				System.out.println();
 			}
@@ -37,11 +47,15 @@ public class zipRunner {
 			for(String barcode: barcodes) { 
 				Zipcode barOb = new Zipcode(barcode);
 				System.out.println(barcode + "    ------->    " + barOb.toZip());
-				barOb.printLocation();
+				String location = barOb.printLocation();
+				if(location.equals("")) {
+					System.out.println("No Location Found");
+				}
 				System.out.println("");
 			}
 
 		}
+		in.close();
 	}
 
 	/**
@@ -63,6 +77,7 @@ public class zipRunner {
 			in.nextLine();
 			length++;
 		}
+
 		String[] result = new String[length]; //creates array of said length
 
 		in = new Scanner(file); //start over 
@@ -76,18 +91,8 @@ public class zipRunner {
 
 	}
 	/**
-	 * prints an input array
-	 * @param array that you want printed
-	 */
-	public static void printArray(String[] array)
-	{
-		for(int i = 0; i < array.length; i++)   //go through each element and print
-			System.out.println(array[i]);
-		System.out.println();  //casual line break
-	}
-	/**
-	 * does option1 of the assignment, takes in a barcode and prints in nice an legibly
-	 * @param x, containing a 27 long barcode
+	 * does option1 of the assignment, takes in a Barcode and prints in nice an legibly
+	 * @param x, containing a 27-character Barcode
 	 */
 	public static void readablePostalBarcodes(Barcode x)
 	{

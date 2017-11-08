@@ -19,6 +19,7 @@ public class Zipcode {
 	}
 	/**
 	 * Checks to see if input value is a Zipcode.
+	 * @precondition Must invoke on initialized non-primitive data type
 	 * @return Boolean value (true if Zipcode, otherwise false)
 	 */
 	private boolean isZip() {
@@ -35,6 +36,7 @@ public class Zipcode {
 	}
 	/**
 	 * If the given input is a Barcode, converts to a Zipcode. Otherwise, returns the Zipcode.
+	 * @pre-condition Must have some data type containing a standard-length barcode
 	 * @return Zipcode(converted or not) as type Zipcode
 	 */
 	public Zipcode toZip() {
@@ -97,7 +99,7 @@ public class Zipcode {
 			String currentCity;
 			String currentCityZip;
 			String location = "";
-					
+
 			while(cityParse.hasNextLine()) { //For every passed item, checks against CityZipCodes.txt and prints matches
 				currentCity = cityParse.nextLine();
 				currentCityZip = currentCity.substring(0, 5);
@@ -107,11 +109,7 @@ public class Zipcode {
 					location = city.getCity() + " " + state.getState();
 					System.out.println(location);
 				}
-				if (zipcode.equals("Error - Invalid check digit!")) {
-					location = "No Location Found";
-					System.out.println(location);
-					break;
-				}
+
 			}
 			cityParse.close();
 			return location;

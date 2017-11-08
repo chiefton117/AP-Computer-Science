@@ -2,7 +2,7 @@ package zipCodes2;
 
 public class Location {
 	private String location;
-	
+
 	public Location(String input) {
 		location = input;
 	}
@@ -15,6 +15,7 @@ public class Location {
 		return tokens[1];
 	}
 	/**
+	 * 
 	 * Returns State associated with input type Location from format "ZIPCODE,CITY,STATE"
 	 * @return State as type String
 	 */
