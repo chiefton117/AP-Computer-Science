@@ -6,18 +6,6 @@ public class loopActivity {
 		System.out.println(Triangle(6));
 		System.out.println(BunnyEars(6));
 		Dia(6);
-		System.out.println(fibonacci(3));
-		//x = x(n-1) + x(n-2)
-	}
-	public static int fibonacci(int num) {
-		int fold1 = 1;
-		int fold2 = 1;
-		int fnew = 1;
-		for(int i = 0; i <= num; i++) {
-			fnew = (fold1 * i-1) + (fold2 * i-2);
-		}
-		
-		return fnew;
 	}
 	public static void Dia(int num) {
 		for(int i=1;i<=num;i++) {
