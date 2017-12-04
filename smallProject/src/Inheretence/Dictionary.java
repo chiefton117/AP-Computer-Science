@@ -1,17 +1,19 @@
-/*package Inheretence;
+package Inheretence;
 
 public class Dictionary extends book {
 		
+	private String definition;
 	
-	private int words;
-	private int pages;
-	
-	public Dictionary(int numWords) {
-		words = numWords;
+	public Dictionary(String name, int numPages, int numWords) {
+		super(name, numPages, numWords, "It's a dictionary, it contains many words and definitions.");
 	}
-	
+	public void addDefinition(String def) {
+		
+		super.addWords(1);
+		definition = def;
+		System.out.println("Definition successfuly added to " + this + " for: " + def);
+	}
 	public String toString() {
-		return super.toString();
+		return (this.getTitle());
 	}
 }
-*/

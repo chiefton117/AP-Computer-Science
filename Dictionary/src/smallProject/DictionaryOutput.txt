@@ -1,0 +1,50 @@
+Total Words: 234936
+Five Letter Words: 9987
+
+crypt
+cymry
+dryly
+dryth
+glyph
+gypsy
+gypsy
+lymph
+lynch
+myrrh
+nymph
+psych
+pygmy
+pygmy
+rhymy
+scyld
+scyth
+shyly
+slyly
+smyth
+sylph
+synch
+thymy
+tryst
+wryly
+xylyl
+0 Vowels: 26
+1 Vowels: 2304
+2 Vowels: 6128
+3 Vowels: 1495
+4 Vowels: 34
+5 Vowels: 0
+
+Longest word has 24 Character(s)
+Shortest word has 1 Character(s)
+The longest word is: formaldehydesulphoxylate
+The shortest word is: A
+
+aJAVA
+JAVA
+JAVAhai
+JAVAli
+JAVAn
+JAVAnee
+JAVAnese
+zaviJAVA
+Words containing Java: 8
