@@ -1,42 +1,40 @@
 
 public class Electric extends Guitar implements Tuning {
 	
-	private String tuning;
+	public String[] tunings = {"A Standard", "Drop A", "B Standard", "Drop B", "C Standard", "Drop C", "D Standard", "Drop D", "E Standard"};
 	
-	public Electric(String brandName, String color, int stringCount, String tune) {
-		super(brandName, color, stringCount, tune);
+	public Electric(String color, int stringCount, String tune) {
+		super("Electric", color, stringCount, tune);
 	}
-	public String getTuning() {
-		return tuning;
-	}
+	
 	public void tuneTo(String tune) {
 		switch(tune.toLowerCase()) {
 		case("a standard") : 
-			tuning = "A Standard";
+			this.setTuning("A Standard");
 			break;
 		case("drop a") : 
-			tuning = "Drop A";
+			this.setTuning("Drop A");
 			break;
 		case("b standard") : 
-			tuning = "B Standard";
+			this.setTuning("B Standard");
 			break;
 		case("drop b") : 
-			tuning = "Drop B";
+			this.setTuning("Drop B");
 			break;
 		case("c standard") : 
-			tuning = "C Standard";
+			this.setTuning("C Standard");
 			break;
 		case("drop c") : 
-			tuning = "Drop C";
+			this.setTuning("Drop C");
 			break;
 		case("d standard") : 
-			tuning = "D Standard";
+			this.setTuning("D Standard");
 			break;
 		case("drop d") : 
-			tuning = "Drop D";
+			this.setTuning("Drop D");
 			break;
 		case("e standard") : 
-			tuning = "E Standard";
+			this.setTuning("E Standard");
 			break;
 		default :
 			System.out.println("Unrecognized tuning, valid tunings are: ");
@@ -45,4 +43,5 @@ public class Electric extends Guitar implements Tuning {
 			}
 		}
 	}
+	
 }

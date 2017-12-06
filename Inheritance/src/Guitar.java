@@ -1,20 +1,20 @@
 
-public abstract class Guitar {
+public abstract class Guitar implements Comparable<Guitar>{
 	
-	private String brand;
+	private String type;
 	private String color;
 	private int strings;
 	private String tuning;
-	public String[] tunings = {"A Standard", "Drop A", "B Standard", "Drop B", "C Standard", "Drop C", "D Standard", "Drop D", "E Standard"};
 	
-	public Guitar(String brandName, String guitarColor, int stringCount, String tune) {
-		brand = brandName;
+	public Guitar(String typeName, String guitarColor, int stringCount, String tune) {
+		type = typeName;
 		color = guitarColor;
 		strings = stringCount;
 		tuning = tune;
 	}
-	public String getBrand() {
-		return brand;
+	
+	public String getType() {
+		return type;
 	}
 	public String getColor() {
 		return color;
@@ -25,10 +25,19 @@ public abstract class Guitar {
 	public String getTuning() {
 		return tuning;
 	}
+	public void setTuning(String tune) {
+		tuning = tune;
+	}
 	public void play() {
-		System.out.println("You play your " + brand + " " + this.getClass().getSimpleName() + " Guitar in " + tuning + " tuning.");
+		System.out.println("You play your " + this.getClass().getSimpleName() + " " + type + " Guitar in " + tuning + " tuning.");
 	}
 	public String toString() {
-		return this.getBrand();
+		return this.getClass().getSimpleName();
+	}
+	public int compareTo(Guitar guitar) {
+		return this.toString().compareTo(guitar.toString());
+	}
+	public boolean equals(Guitar guitar) {
+		return this.toString().equals(guitar.toString());
 	}
 }

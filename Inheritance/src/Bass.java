@@ -3,8 +3,8 @@ public class Bass extends Guitar {
 
 	private String tuning;
 	
-	public Bass(String brandName, String color, int stringCount, String tune) {
-		super(brandName, color, stringCount, tune);
+	public Bass(String color, int stringCount, String tune) {
+		super("Bass", color, stringCount, tune);
 	}
 	public String getTuning() {
 		return tuning;
