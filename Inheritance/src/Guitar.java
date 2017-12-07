@@ -1,18 +1,20 @@
 
 public abstract class Guitar implements Comparable<Guitar>{
-	
+
 	private String type;
 	private String color;
 	private int strings;
 	private String tuning;
-	
+
 	public Guitar(String typeName, String guitarColor, int stringCount, String tune) {
 		type = typeName;
 		color = guitarColor;
 		strings = stringCount;
 		tuning = tune;
 	}
-	
+	public void listGenres() {
+		System.out.print("This guitar is predisposed to play genres such as: ");
+	}
 	public String getType() {
 		return type;
 	}

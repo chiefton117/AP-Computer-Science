@@ -10,10 +10,10 @@ public class Acoustic extends Guitar implements Tuning {
 		switch(tune.toLowerCase()) {
 		case("drop d") : 
 			this.setTuning("Drop D");
-			break;
+		break;
 		case("e standard") : 
 			this.setTuning("E Standard");
-			break;
+		break;
 		default :
 			System.out.println("Unrecognized tuning, valid tunings are: |");
 			for(String tuning : tunings) {
@@ -21,4 +21,5 @@ public class Acoustic extends Guitar implements Tuning {
 			}
 		}
 	}
+
 }
