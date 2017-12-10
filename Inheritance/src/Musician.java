@@ -1,4 +1,7 @@
-
+/**
+ * 	@author Tim Harrold
+ *	Client class for the Guitar hierarchy, meant to define, instantiate, play, and tune guitars.
+ */
 public class Musician {
 
 	public static void main(String[] args) {
@@ -14,7 +17,7 @@ public class Musician {
 			System.out.println("This is a " + guitar.getColor() + " " + guitar.toString() + " guitar with " + guitar.getStrings() + " strings.");
 			guitar.listGenres();
 			guitar.play();
-			System.out.println();
+			System.out.println(" ");
 		}
 		
 		Guitar[] electrics = new Guitar[] {Strat, RG, SG};

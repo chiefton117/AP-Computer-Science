@@ -1,4 +1,9 @@
-
+/**
+ * 	@author Tim Harrold
+ *	Subclass of: Guitar
+ *	Superclass of: SteelStrung, Classical
+ *	Defines the Acoustic object, meant to assign methods to any SteelStrung or Classical Guitar
+ */
 public class Acoustic extends Guitar implements Tuning {
 
 	public String[] tunings = {"Drop D", "E Standard"};

@@ -1,4 +1,7 @@
-
+/**
+ * 	@author Tim Harrold
+ *	Superclass in the Guitar hierarchy. Defines the Guitar object, and stores instance data for all guitar objects.
+ */
 public abstract class Guitar implements Comparable<Guitar>{
 
 	private String type;

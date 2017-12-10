@@ -1,4 +1,9 @@
-
+/**
+ * 	@author Tim Harrold
+ *	Subclass of: Acoustic
+ *	Superclass of: Taylor
+ *	Defines the SteelStrung object, meant to emulate and define an Acoustic Guitar as Steel Strung
+ */
 public class SteelStrung extends Acoustic {
 	
 	public SteelStrung(String color, int stringCount, String tune) {

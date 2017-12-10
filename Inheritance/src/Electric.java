@@ -1,4 +1,9 @@
-
+/**
+ * 	@author Tim Harrold
+ *	Subclass of: Guitar
+ *	Superclass of: Fender, Gibson, Ibanez
+ *	Defines the Electric object, meant to assign methods to any Subclass of Electric
+ */
 public class Electric extends Guitar implements Tuning {
 
 	public String[] tunings = {"A Standard", "Drop A", "B Standard", "Drop B", "C Standard", "Drop C", "D Standard", "Drop D", "E Standard"};

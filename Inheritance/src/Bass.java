@@ -1,4 +1,9 @@
-
+/**
+ * 	@author Tim Harrold
+ *	Subclass of: Guitar
+ *	Superclass of: Warwick
+ *	Defines the Bass object, meant to assign methods to any Warwick object
+ */
 public class Bass extends Guitar {
 
 	private String tuning;
