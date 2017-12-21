@@ -11,6 +11,11 @@ public class Acoustic extends Guitar implements Tuning {
 	public Acoustic(String color, int stringCount, String tune) {
 		super("Acoustic", color, stringCount, tune);
 	}
+	/*
+	 * Tunes the guitar based on inputted tuning
+	 * Pre-condition: Must instantiate an acoustic object
+	 * Post-condition: sets Guitar tuning instance data to accepted tuning value
+	 */
 	public void tuneTo(String tune) {
 		switch(tune.toLowerCase()) {
 		case("drop d") : 
