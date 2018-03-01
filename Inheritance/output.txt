@@ -1,0 +1,30 @@
+This is a Blue Taylor guitar with 6 strings.
+This guitar is predisposed to play genres such as: Country, Soft Rock, and Indie
+You play your Taylor Acoustic Guitar in E Standard tuning.
+ 
+This is a blue Fender guitar with 6 strings.
+This guitar is predisposed to play genres such as: Rock, Metal, Country, Jazz
+You play your Fender Electric Guitar in E Standard tuning.
+ 
+This is a Gray Ibanez guitar with 7 strings.
+This guitar is predisposed to play genres such as: Rock, Metal, Country, Jazz
+You play your Ibanez Electric Guitar in Drop C tuning.
+ 
+This is a Gray Warwick guitar with 4 strings.
+This guitar is predisposed to play genres such as: Jazz, Rock, Metal, and basically anything else that has bass
+You play your Warwick Bass Guitar in Drop C tuning.
+ 
+This is a Sunburst Gibson guitar with 6 strings.
+This guitar is predisposed to play genres such as: Rock, Metal, Country, Jazz
+You play your Gibson Electric Guitar in Drop D tuning.
+ 
+This is a Oak Yamaha guitar with 6 strings.
+This guitar is predisposed to play genres such as: Folk, Indie Rock, and Classical
+You play your Yamaha Acoustic Guitar in E Standard tuning.
+ 
+You play your Fender Electric Guitar in Drop D tuning.
+
+You play your Ibanez Electric Guitar in Drop D tuning.
+
+You play your Gibson Electric Guitar in Drop D tuning.
+

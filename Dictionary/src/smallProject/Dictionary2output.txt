@@ -1,0 +1,34 @@
+Shortest word: A
+Shortest word has 1 vowel(s).
+Longest word: dacryocystosyringotomy
+Longest word has 6 vowel(s).
+Second longest word: undenominationalize
+Second longest word has 10 vowel(s).
+anticritique
+autocephality
+cecidiologist
+cruroinguinal
+dacryocystosyringotomy
+elderbrotherhood
+emetomorphine
+Epanorthidae
+ethnogeographer
+exceptionality
+hemoconcentration
+interjaculate
+intrarelation
+lackadaisical
+lienopancreatic
+Mesosauria
+moringaceous
+nonliquidation
+overdaintiness
+Philodinidae
+pleurogenous
+pseudocultural
+spumification
+thermoneutrality
+unadventurously
+uncompliableness
+undenominationalize
+vulvovaginitis
