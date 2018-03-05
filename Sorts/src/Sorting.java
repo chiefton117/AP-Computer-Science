@@ -44,12 +44,23 @@ public class Sorting {
 			System.out.print(a + " ");
 		}
 		System.out.println();
-		Sort(arr4, 0, arr4.length-1);
+		mergeSort(arr4, 0, arr4.length-1);
 		for( int a : arr4) {
 			System.out.print(a + " ");
 		}
 		System.out.println();
 
+		System.out.println();
+		int[] arr5 = {1, 5, 3, 10, 9, 4, 8, 2, 7, 6};
+		for( int a : arr5) {
+			System.out.print(a + " ");
+		}
+		System.out.println();
+		quickSort(arr5, 0, arr5.length-1);
+		for( int a : arr5) {
+			System.out.print(a + " ");
+		}
+		System.out.println();
 
 	}
 	public static void Bubble(int[] arr) {
@@ -132,14 +143,49 @@ public class Sorting {
 			arr[l+i] = arr2[i];
 		}
 	}
-	public static void Sort(int[] arr, int l, int r) {
+	public static void mergeSort(int[] arr, int l, int r) {
 		if(l < r) {
 			int m = (l + r) / 2;
 			
-			Sort(arr, l, m);
-			Sort(arr, m+1, r);
+			mergeSort(arr, l, m);
+			mergeSort(arr, m+1, r);
 			
 			Merge(arr, l, m, r);
 		}
 	}
+	
+	public static int partition(int arr[], int low, int high)
+    {
+        int pivot = arr[high]; 
+        int i = (low-1);
+        for (int j=low; j<high; j++)
+        {
+      
+            if (arr[j] <= pivot)
+            {
+                i++;
+ 
+           
+                int temp = arr[i];
+                arr[i] = arr[j];
+                arr[j] = temp;
+            }
+        }
+ 
+        int temp = arr[i+1];
+        arr[i+1] = arr[high];
+        arr[high] = temp;
+ 
+        return i+1;
+    }
+	public static void quickSort(int arr[], int low, int high)
+    {
+        if (low < high)
+        {
+            int pi = partition(arr, low, high);
+ 
+            quickSort(arr, low, pi-1);
+            quickSort(arr, pi+1, high);
+        }
+}
 }
