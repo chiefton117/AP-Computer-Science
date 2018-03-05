@@ -142,4 +142,21 @@ public class Sorting {
 			Merge(arr, l, m, r);
 		}
 	}
+	public static void Partition(int[] arr, int low, int high) {
+		
+		int r = (int)Math.random() * arr.length - 1;
+		
+		for(int i : arr) {
+			if(arr[r] < arr[i]) {
+				int a = arr[i];
+				arr[i] = arr[r];
+				arr[r] = arr[i];
+			}
+		}
+		
+	}
+	public static void QuickSort(int[] arr, int low, int high) {
+		
+		return arr;
+	}
 }
