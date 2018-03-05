@@ -3,20 +3,224 @@ public class Client extends Sort {
 
 	public static void main(String[] args) {
 		
-		int[] arr = makeArray(10000);
+	//sortAll(1000);
+	//sortAll(5000);
+	//sortAll(10000);
+	//sortAll(50000);
+	//sortFour(100000);
+	//sortFour(500000);
+	//sortTwo(1000000);
+	//sortTwo(5000000);
+	//sort200k();
+	//sortSorted200k();
+	//sortRevSorted200k();
+	//sortRand200k();
+	
+	 System.out.println("-----------------------------------------------------------------------------");
+	    System.out.printf("%10s %30s %20s %5s %5s", "Bubble", "Insertion", "Selection", "Merge", "Bubble");
+	    System.out.println();
+	    System.out.println("-----------------------------------------------------------------------------");
+	    for(){
+	        System.out.format("%10s %30s %20s %5d %5c", 
+	                //Print array data one by one
+	        System.out.println();
+	    }
+	    System.out.println("-----------------------------------------------------------------------------");
+	}
+	public static void sort200k() {
+		System.out.println("Sort an unsorted data set of 200,000");
 		StopWatch1 s = new StopWatch1();
-		s.start();
-		bubbleSort(copyArray(arr));
-		s.stop();
-		System.out.println("elapsed time in milliseconds for bubble sort: " + s.getElapsedTime());
+		int[] arr = makeArray(200000);
 		s.start();
 		insertionSort(copyArray(arr));
 		s.stop();
 		System.out.println("elapsed time in milliseconds for insertion sort: " + s.getElapsedTime());
-
+		
+		s.start();
+		selectionSort(copyArray(arr));
+		s.stop();
+		System.out.println("elapsed time in milliseconds for selection sort: " + s.getElapsedTime());
+		
+		s.start();
+		mergeSort(copyArray(arr), 0, arr.length - 1);
+		s.stop();
+		System.out.println("elapsed time in milliseconds for merge sort: " + s.getElapsedTime());
+		
+		s.start();
+		quickSort(copyArray(arr), 0, arr.length - 1);
+		s.stop();
+		System.out.println("elapsed time in milliseconds for quick sort: " + s.getElapsedTime());
 	}
+	
+	
+	/*
+	 * Defines instantiates an array of given size, then sorts said array with all five sorting algorithms, printing the time taken to sort each list. Copies of the array
+	 * are made and passed for each sort, so each algorithm is given an unsorted array.
+	 * Pre-condition: None
+	 * Post-condition: Statement printed giving the time taken for each sort
+	 */
+	public static void sortAll(int size) {
+		System.out.println("With array size of " + size);
+		StopWatch1 s = new StopWatch1();
+		int[] arr = makeArray(size);
+		s.start();
+		bubbleSort(copyArray(arr));
+		s.stop();
+		System.out.println("elapsed time in milliseconds for bubble sort: " + s.getElapsedTime());
+		
+		s.start();
+		insertionSort(copyArray(arr));
+		s.stop();
+		System.out.println("elapsed time in milliseconds for insertion sort: " + s.getElapsedTime());
+		
+		s.start();
+		selectionSort(copyArray(arr));
+		s.stop();
+		System.out.println("elapsed time in milliseconds for selection sort: " + s.getElapsedTime());
+		
+		s.start();
+		mergeSort(copyArray(arr), 0, arr.length - 1);
+		s.stop();
+		System.out.println("elapsed time in milliseconds for merge sort: " + s.getElapsedTime());
+		
+		s.start();
+		quickSort(copyArray(arr), 0, arr.length - 1);
+		s.stop();
+		System.out.println("elapsed time in milliseconds for quick sort: " + s.getElapsedTime());
+	}
+	
+	
+	public static void sortFour(int size) {
+		System.out.println("With array size of " + size);
+		StopWatch1 s = new StopWatch1();
+		int[] arr = makeArray(size);
+		
+		s.start();
+		insertionSort(copyArray(arr));
+		s.stop();
+		System.out.println("elapsed time in milliseconds for insertion sort: " + s.getElapsedTime());
+		
+		s.start();
+		selectionSort(copyArray(arr));
+		s.stop();
+		System.out.println("elapsed time in milliseconds for selection sort: " + s.getElapsedTime());
+		
+		s.start();
+		mergeSort(copyArray(arr), 0, arr.length - 1);
+		s.stop();
+		System.out.println("elapsed time in milliseconds for merge sort: " + s.getElapsedTime());
+		
+		s.start();
+		quickSort(copyArray(arr), 0, arr.length - 1);
+		s.stop();
+		System.out.println("elapsed time in milliseconds for quick sort: " + s.getElapsedTime());
+	}
+	
+	
+	public static void sortTwo(int size) {
+		System.out.println("With array size of " + size);
+		StopWatch1 s = new StopWatch1();
+		int[] arr = makeArray(size);
+		
+		s.start();
+		mergeSort(copyArray(arr), 0, arr.length - 1);
+		s.stop();
+		System.out.println("elapsed time in milliseconds for merge sort: " + s.getElapsedTime());
+		
+		s.start();
+		quickSort(copyArray(arr), 0, arr.length - 1);
+		s.stop();
+		System.out.println("elapsed time in milliseconds for quick sort: " + s.getElapsedTime());
+	}
+	
+	public static void sortSorted200k() {
+		System.out.println("Sort a sorted data set of 200,000");
+		int[] arr = makeArray(200000);
+		quickSort(arr, 0, arr.length - 1);
+		
+		StopWatch1 s = new StopWatch1();
+		s.start();
+		insertionSort(arr);
+		s.stop();
+		System.out.println("elapsed time in milliseconds for insertion sort: " + s.getElapsedTime());
+		
+		s.start();
+		selectionSort(arr);
+		s.stop();
+		System.out.println("elapsed time in milliseconds for selection sort: " + s.getElapsedTime());
+		
+		s.start();
+		mergeSort(arr, 0, arr.length - 1);
+		s.stop();
+		System.out.println("elapsed time in milliseconds for merge sort: " + s.getElapsedTime());
+		
+		s.start();
+		quickSort(arr, 0, arr.length - 1);
+		s.stop();
+		System.out.println("elapsed time in milliseconds for quick sort: " + s.getElapsedTime());
+	}
+	public static void sortRevSorted200k() {
+		System.out.println("Sort a reverse sorted data set of 200,000");
+		int[] arr = new int[200000];
+		for(int i = 0; i < arr.length; i++) {
+			arr[i] = arr.length - i;
+		}
+		
+		StopWatch1 s = new StopWatch1();
+		s.start();
+		insertionSort(arr);
+		s.stop();
+		System.out.println("elapsed time in milliseconds for insertion sort: " + s.getElapsedTime());
+		
+		s.start();
+		selectionSort(arr);
+		s.stop();
+		System.out.println("elapsed time in milliseconds for selection sort: " + s.getElapsedTime());
+		
+		s.start();
+		mergeSort(arr, 0, arr.length - 1);
+		s.stop();
+		System.out.println("elapsed time in milliseconds for merge sort: " + s.getElapsedTime());
+		
+		s.start();
+		quickSort(arr, 0, arr.length - 1);
+		s.stop();
+		System.out.println("elapsed time in milliseconds for quick sort: " + s.getElapsedTime());
+	}
+	public static void sortRand200k() {
+		System.out.println("Sort a sorted data set of 200,000");
+		int[] arr = new int[200000];
+		for(int i = 0; i < arr.length; i++) {
+			arr[i] = (int) (Math.random() * 20) + 1;
+		}
+		
+		StopWatch1 s = new StopWatch1();
+		s.start();
+		insertionSort(arr);
+		s.stop();
+		System.out.println("elapsed time in milliseconds for insertion sort: " + s.getElapsedTime());
+		
+		s.start();
+		selectionSort(arr);
+		s.stop();
+		System.out.println("elapsed time in milliseconds for selection sort: " + s.getElapsedTime());
+		
+		s.start();
+		mergeSort(arr, 0, arr.length - 1);
+		s.stop();
+		System.out.println("elapsed time in milliseconds for merge sort: " + s.getElapsedTime());
+		
+		s.start();
+		quickSort(arr, 0, arr.length - 1);
+		s.stop();
+		System.out.println("elapsed time in milliseconds for quick sort: " + s.getElapsedTime());
+	}
+	
+	/*
+	 * Part 1 of project, declares/instantiates/sorts 5 different arrays using each algorithm
+	 */
 	public static void partOne() {
-		//Part 1 of project, declares/instantiates/sorts 5 different arrays using each algorithm
+		
 				System.out.println("Bubble Sort");
 				int[] arr1 = makeArray();
 				printArray(arr1);
@@ -89,7 +293,10 @@ public class Client extends Sort {
 	 * Post-condition: Copy array is returned with same values as original array
 	 */
 	private static int[] copyArray(int[] arr) {
-		int[] arr2 = arr;
-		return arr2;
+		int[] copy = new int[arr.length];
+		for(int i = 0; i < arr.length; i++) {
+			copy[i] = arr[i];
+		}
+		return copy;
 	}
 }

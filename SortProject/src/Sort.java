@@ -166,7 +166,7 @@ public class Sort extends Search
    **/
   public static void quickSort(int[] arr, int low, int high)
   {
-    //Sort the entire list using the recursive merge sort method
+ 
 	  if (low < high)
       {
           int pi = partition(arr, low, high);
