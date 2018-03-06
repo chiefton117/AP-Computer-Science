@@ -1,9 +1,9 @@
 
-public class Client extends Sort {
+public class Client {
 
 	public static void main(String[] args) {
 		
-	//sortAll(1000);
+	sortAll(1000);
 	//sortAll(5000);
 	//sortAll(10000);
 	//sortAll(50000);
@@ -11,113 +11,124 @@ public class Client extends Sort {
 	//sortFour(500000);
 	//sortTwo(1000000);
 	//sortTwo(5000000);
-	//sort200k();
+	//sortAll(200000);
 	//sortSorted200k();
 	//sortRevSorted200k();
 	//sortRand200k();
-	
-	 System.out.println("-----------------------------------------------------------------------------");
-	    System.out.printf("%10s %30s %20s %5s %5s", "Bubble", "Insertion", "Selection", "Merge", "Bubble");
-	    System.out.println();
-	    System.out.println("-----------------------------------------------------------------------------");
-	    for(){
-	        System.out.format("%10s %30s %20s %5d %5c", 
-	                //Print array data one by one
-	        System.out.println();
-	    }
-	    System.out.println("-----------------------------------------------------------------------------");
+	int[] arr = makeArray(5000000);
+	linear(copyArray(arr), 533);
+	linear(Sort.mergeSort(copyArray(arr), 0, arr.length - 1), 533);
 	}
-	public static void sort200k() {
-		System.out.println("Sort an unsorted data set of 200,000");
-		StopWatch1 s = new StopWatch1();
-		int[] arr = makeArray(200000);
-		s.start();
-		insertionSort(copyArray(arr));
-		s.stop();
-		System.out.println("elapsed time in milliseconds for insertion sort: " + s.getElapsedTime());
-		
-		s.start();
-		selectionSort(copyArray(arr));
-		s.stop();
-		System.out.println("elapsed time in milliseconds for selection sort: " + s.getElapsedTime());
-		
-		s.start();
-		mergeSort(copyArray(arr), 0, arr.length - 1);
-		s.stop();
-		System.out.println("elapsed time in milliseconds for merge sort: " + s.getElapsedTime());
-		
-		s.start();
-		quickSort(copyArray(arr), 0, arr.length - 1);
-		s.stop();
-		System.out.println("elapsed time in milliseconds for quick sort: " + s.getElapsedTime());
+	/*
+	 * uses a linear search to find the index of integer parameter goal, prints time taken to search, index if found, and -1 if not found
+	 */
+	public static void linear(int[] arr, int goal) {
+		Search.linearSearch(arr, goal);
 	}
-	
-	
+	/*
+	 * uses a binary search to find the index of integer parameter goal, prints time taken to search, index if found, and -1 if not found
+	 */
+	public static void binary(int[] arr, int goal) {
+		
+	}
 	/*
 	 * Defines instantiates an array of given size, then sorts said array with all five sorting algorithms, printing the time taken to sort each list. Copies of the array
 	 * are made and passed for each sort, so each algorithm is given an unsorted array.
 	 * Pre-condition: None
 	 * Post-condition: Statement printed giving the time taken for each sort
+	 * 
+	 * @param size of array to be sorted
 	 */
 	public static void sortAll(int size) {
-		System.out.println("With array size of " + size);
+		int bubble = 0;
+		int insertion = 0;
+		int selection = 0;
+		int merge = 0;
+		int quick = 0;
 		StopWatch1 s = new StopWatch1();
 		int[] arr = makeArray(size);
 		s.start();
-		bubbleSort(copyArray(arr));
+		Sort.bubbleSort(copyArray(arr));
 		s.stop();
-		System.out.println("elapsed time in milliseconds for bubble sort: " + s.getElapsedTime());
+		bubble = (int) s.getElapsedTime();
+		
 		
 		s.start();
-		insertionSort(copyArray(arr));
+		Sort.insertionSort(copyArray(arr));
 		s.stop();
-		System.out.println("elapsed time in milliseconds for insertion sort: " + s.getElapsedTime());
+		insertion = (int) s.getElapsedTime();
 		
 		s.start();
-		selectionSort(copyArray(arr));
+		Sort.selectionSort(copyArray(arr));
 		s.stop();
-		System.out.println("elapsed time in milliseconds for selection sort: " + s.getElapsedTime());
+		selection = (int) s.getElapsedTime();
 		
 		s.start();
-		mergeSort(copyArray(arr), 0, arr.length - 1);
+		Sort.mergeSort(copyArray(arr), 0, arr.length - 1);
 		s.stop();
-		System.out.println("elapsed time in milliseconds for merge sort: " + s.getElapsedTime());
+		merge = (int) s.getElapsedTime();
 		
 		s.start();
-		quickSort(copyArray(arr), 0, arr.length - 1);
+		Sort.quickSort(copyArray(arr), 0, arr.length - 1);
 		s.stop();
-		System.out.println("elapsed time in milliseconds for quick sort: " + s.getElapsedTime());
+		quick = (int) s.getElapsedTime();
+		System.out.println("With array size of " + size);
+		System.out.printf("%12d%10s%10s%10s%10s%10s", size, "Bubble", "Insertion", "Selection", "Merge", "Quick\n");
+		System.out.printf("%12s%10d%10d%10d%10d%10d", "Time", bubble, insertion, selection, merge, quick);
 	}
 	
-	
+	/*
+	 * Defines instantiates an array of given size, then sorts said array with four sorting algorithms(excluding bubble), printing the time taken to sort each list. Copies of the array
+	 * are made and passed for each sort, so each algorithm is given an unsorted array.
+	 * Pre-condition: None
+	 * Post-condition: Statement printed giving the time taken for each sort
+	 * 
+	 * @param size of array to be sorted
+	 */
 	public static void sortFour(int size) {
-		System.out.println("With array size of " + size);
+		int insertion = 0;
+		int selection = 0;
+		int merge = 0;
+		int quick = 0;
 		StopWatch1 s = new StopWatch1();
 		int[] arr = makeArray(size);
 		
 		s.start();
-		insertionSort(copyArray(arr));
+		Sort.insertionSort(copyArray(arr));
 		s.stop();
-		System.out.println("elapsed time in milliseconds for insertion sort: " + s.getElapsedTime());
+		insertion = (int) s.getElapsedTime();
 		
 		s.start();
-		selectionSort(copyArray(arr));
+		Sort.selectionSort(copyArray(arr));
 		s.stop();
-		System.out.println("elapsed time in milliseconds for selection sort: " + s.getElapsedTime());
+		selection = (int) s.getElapsedTime();
 		
 		s.start();
 		mergeSort(copyArray(arr), 0, arr.length - 1);
 		s.stop();
-		System.out.println("elapsed time in milliseconds for merge sort: " + s.getElapsedTime());
+		merge = (int) s.getElapsedTime();
 		
 		s.start();
 		quickSort(copyArray(arr), 0, arr.length - 1);
 		s.stop();
-		System.out.println("elapsed time in milliseconds for quick sort: " + s.getElapsedTime());
+		quick = (int) s.getElapsedTime();
+		
+		System.out.println("With array size of " + size);
+		System.out.printf("%12d%10s%10s%10s%10s", size, "Insertion", "Selection", "Merge", "Quick\n");
+		System.out.printf("%12s%10d%10d%10d%10d", "Time", insertion, selection, merge, quick);
 	}
 	
-	
+	/*
+	 * Defines instantiates an array of given size, then sorts said array with two sorting algorithms(merge and quick), printing the time taken to sort each list. Copies of the array
+	 * are made and passed for each sort, so each algorithm is given an unsorted array.
+	 * Pre-condition: None
+	 * Post-condition: Statement printed giving the time taken for each sort
+	 * 
+	 * @param size of array to be sorted
+	 */
 	public static void sortTwo(int size) {
+		int merge = 0;
+		int quick = 0;
 		System.out.println("With array size of " + size);
 		StopWatch1 s = new StopWatch1();
 		int[] arr = makeArray(size);
@@ -125,16 +136,29 @@ public class Client extends Sort {
 		s.start();
 		mergeSort(copyArray(arr), 0, arr.length - 1);
 		s.stop();
-		System.out.println("elapsed time in milliseconds for merge sort: " + s.getElapsedTime());
+		merge = (int) s.getElapsedTime();
 		
 		s.start();
 		quickSort(copyArray(arr), 0, arr.length - 1);
 		s.stop();
-		System.out.println("elapsed time in milliseconds for quick sort: " + s.getElapsedTime());
+		quick = (int) s.getElapsedTime();
+		
+		System.out.println("With array size of " + size);
+		System.out.printf("%12d%10s%10s", size, "Merge", "Quick\n");
+		System.out.printf("%12s%10d%10d", "Time", merge, quick);
 	}
-	
+	/*
+	 * Defines and instantiates an array of size 200k, sorts said array, then times each sort(excluding bubble) and prints the results
+	 * Pre-condition: None
+	 * Post-condition Array is created and results are printed for each sort of sort
+	 */
 	public static void sortSorted200k() {
-		System.out.println("Sort a sorted data set of 200,000");
+		
+		int insertion = 0;
+		int selection = 0;
+		int merge = 0;
+		int quick = 0;
+		
 		int[] arr = makeArray(200000);
 		quickSort(arr, 0, arr.length - 1);
 		
@@ -142,27 +166,40 @@ public class Client extends Sort {
 		s.start();
 		insertionSort(arr);
 		s.stop();
-		System.out.println("elapsed time in milliseconds for insertion sort: " + s.getElapsedTime());
+		insertion = (int) s.getElapsedTime();
 		
 		s.start();
 		selectionSort(arr);
 		s.stop();
-		System.out.println("elapsed time in milliseconds for selection sort: " + s.getElapsedTime());
+		selection = (int) s.getElapsedTime();
 		
 		s.start();
 		mergeSort(arr, 0, arr.length - 1);
 		s.stop();
-		System.out.println("elapsed time in milliseconds for merge sort: " + s.getElapsedTime());
+		merge = (int) s.getElapsedTime();
 		
 		s.start();
 		quickSort(arr, 0, arr.length - 1);
 		s.stop();
-		System.out.println("elapsed time in milliseconds for quick sort: " + s.getElapsedTime());
+		quick = (int) s.getElapsedTime();
+		
+		System.out.println("Sort a sorted data set of 200,000");
+		System.out.printf("%12d%10s%10s%10s%10s", 200000, "Insertion", "Selection", "Merge", "Quick\n");
+		System.out.printf("%12s%10d%10d%10d%10d", "Time", insertion, selection, merge, quick);
 	}
+	/*
+	 * Defines and instantiates an array of size 200k, reverse sorts said array, then times each sort(excluding bubble) and prints the results
+	 * Pre-condition: None
+	 * Post-condition Array is created and results are printed for each sort of sort
+	 */
 	public static void sortRevSorted200k() {
-		System.out.println("Sort a reverse sorted data set of 200,000");
-		int[] arr = new int[200000];
-		for(int i = 0; i < arr.length; i++) {
+		int insertion = 0;
+		int selection = 0;
+		int merge = 0;
+		int quick = 0;
+		int[] arr = makeArray(200000);
+		mergeSort(arr, 0, arr.length - 1);
+		for(int i = arr.length; i > 0; i--) {
 			arr[i] = arr.length - i;
 		}
 		
@@ -170,25 +207,37 @@ public class Client extends Sort {
 		s.start();
 		insertionSort(arr);
 		s.stop();
-		System.out.println("elapsed time in milliseconds for insertion sort: " + s.getElapsedTime());
+		insertion = (int) s.getElapsedTime();
 		
 		s.start();
 		selectionSort(arr);
 		s.stop();
-		System.out.println("elapsed time in milliseconds for selection sort: " + s.getElapsedTime());
+		selection = (int) s.getElapsedTime();
 		
 		s.start();
 		mergeSort(arr, 0, arr.length - 1);
 		s.stop();
-		System.out.println("elapsed time in milliseconds for merge sort: " + s.getElapsedTime());
+		merge = (int) s.getElapsedTime();
 		
 		s.start();
 		quickSort(arr, 0, arr.length - 1);
 		s.stop();
-		System.out.println("elapsed time in milliseconds for quick sort: " + s.getElapsedTime());
+		quick = (int) s.getElapsedTime();
+		
+		System.out.println("Sort a reverse sorted data set of 200,000");
+		System.out.printf("%12d%10s%10s%10s%10s", 200000, "Insertion", "Selection", "Merge", "Quick\n");
+		System.out.printf("%12s%10d%10d%10d%10d", "Time", insertion, selection, merge, quick);
 	}
+	/*
+	 * Defines and instantiates an array of size 200k, with each value being random from 1-20, then times each sort(excluding bubble) and prints the results
+	 * Pre-condition: None
+	 * Post-condition Array is created and results are printed for each sort of sort
+	 */
 	public static void sortRand200k() {
-		System.out.println("Sort a sorted data set of 200,000");
+		int insertion = 0;
+		int selection = 0;
+		int merge = 0;
+		int quick = 0;
 		int[] arr = new int[200000];
 		for(int i = 0; i < arr.length; i++) {
 			arr[i] = (int) (Math.random() * 20) + 1;
@@ -198,22 +247,26 @@ public class Client extends Sort {
 		s.start();
 		insertionSort(arr);
 		s.stop();
-		System.out.println("elapsed time in milliseconds for insertion sort: " + s.getElapsedTime());
+		insertion = (int) s.getElapsedTime();
 		
 		s.start();
 		selectionSort(arr);
 		s.stop();
-		System.out.println("elapsed time in milliseconds for selection sort: " + s.getElapsedTime());
+		selection = (int) s.getElapsedTime();
 		
 		s.start();
 		mergeSort(arr, 0, arr.length - 1);
 		s.stop();
-		System.out.println("elapsed time in milliseconds for merge sort: " + s.getElapsedTime());
+		merge = (int) s.getElapsedTime();
 		
 		s.start();
 		quickSort(arr, 0, arr.length - 1);
 		s.stop();
-		System.out.println("elapsed time in milliseconds for quick sort: " + s.getElapsedTime());
+		quick = (int) s.getElapsedTime();
+		
+		System.out.println("Sort a sorted data set of 200,000");
+		System.out.printf("%12d%10s%10s%10s%10s", 200000, "Insertion", "Selection", "Merge", "Quick\n");
+		System.out.printf("%12s%10d%10d%10d%10d", "Time", insertion, selection, merge, quick);
 	}
 	
 	/*
@@ -255,6 +308,8 @@ public class Client extends Sort {
 	 * Helper method used to create array for part 1 of the project. Creates an array of range -20 to 20.
 	 * Pre-condition: Must declare array
 	 * Post-condition Array is assigned random values in every place from -20 to 20
+	 * 
+	 * @return Array of size 20 with values of -20 to 20
 	 */
 	private static int[] makeArray() {
 		int[] arr = new int[20];
@@ -267,6 +322,9 @@ public class Client extends Sort {
 	 * Helper method meant to create an array of any given size, assuming the range to be 1 to size.
 	 * Pre-condition: Must declare array
 	 * Post-condition: Array is assigned random values in every place from 1 to size
+	 * 
+	 * @param Size of array to be made
+	 * @return array of size size
 	 */
 	private static int[] makeArray(int size) {
 		int[] arr = new int[size];
@@ -279,6 +337,8 @@ public class Client extends Sort {
 	 * Helper method meant to print any array
 	 * Pre-condition: Must have declared and instantiated array
 	 * Post-condition: Array is printed from console
+	 * 
+	 * @param Array to be printed
 	 */
 	private static void printArray(int[] arr) {
 		for(int i = 0; i < arr.length; i++) {
@@ -291,6 +351,9 @@ public class Client extends Sort {
 	 * Copies given array and returns a new array, meant to use in place of modifying the contents of the original array
 	 * Pre-condition: Must define and instantite array of size > 0
 	 * Post-condition: Copy array is returned with same values as original array
+	 * 
+	 * @param Array to be copied
+	 * @return New array with copied values
 	 */
 	private static int[] copyArray(int[] arr) {
 		int[] copy = new int[arr.length];

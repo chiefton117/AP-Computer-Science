@@ -106,7 +106,6 @@ public class Sort extends Search
    **/
   public static void mergeSort(int[] arr, int l, int r)
   {
-    //Sort the entire list using a recursive merge sort method
 	  if(l < r) {
 			int m = (l + r) / 2;
 			
