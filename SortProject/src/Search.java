@@ -33,32 +33,35 @@ public class Search
 	
 	/**
 	 * Implements a Binary Search
-	 *    <Include Algorithm Steps here>
+	 *    1. Get middle index of list
+	 *    2. If the middle index of the list is equal to the goal, return index
+	 *    3. If middle index of list is greater than goal, binary search the bottom half of the list
+	 *    4. If middle index of list is lesser than goal, binary search the top half of the list
 	 * Pre: list must be sorted
 	 * 
 	 * @param list - integer list to search in
 	 * @param num - integer to search for
 	 * @return index of found item, -1 if not found
 	 */
-	public static int binarySearch(int[] list, int num)
+	public static int doBinarySearch(int[] list, int num, int min, int max)
 	{
-		if(list[list.length / 2] < num) {
-			int[] arr = new int[list.length / 2];
-			for(int i = 0; i < list.length / 2; i++) {
-				arr[i] = list[i + (list.length / 2)];
-			}
-			binarySearch(arr, num);
+
+		int val = (min + max) / 2;
+		if(list[val] == num) {
+			return val;
 		}
-		else if(list[list.length / 2] > num) {
-			int[] arr = new int[list.length / 2];
-			for(int i = 0; i < list.length / 2; i++) {
-				arr[i] = list[i];
-			}
-			binarySearch(arr, num);
+		else if(num > list[val]) {
+			return doBinarySearch(list, num, val, max);
 		}
-		else if(list[list.length / 2] == num) {
-			return list[list.length / 2];
+		else {
+			return doBinarySearch(list, num, min, val - 1);
 		}
-		return -1;
+		  
+	}
+	/*
+	 * Simplified calling method for binarySearch, allowing the client to call the method without passing the necessary parameters
+	 */
+	public static int binarySearch(int[] list, int num) {
+		return doBinarySearch(list, num, 0, list.length - 1);
 	}
 }

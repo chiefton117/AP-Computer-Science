@@ -10,7 +10,7 @@
  * @author 
  *
  *******************************************************************/
-public class Sort extends Search
+public class Sort
 {
   
   /************************

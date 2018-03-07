@@ -4,7 +4,7 @@ public class Client {
 	public static void main(String[] args) {
 		
 	sortAll(1000);
-	//sortAll(5000);
+	sortAll(5000);
 	//sortAll(10000);
 	//sortAll(50000);
 	//sortFour(100000);
@@ -16,20 +16,36 @@ public class Client {
 	//sortRevSorted200k();
 	//sortRand200k();
 	int[] arr = makeArray(5000000);
+	
+	//Perform a linear search on an unsorted array
 	linear(copyArray(arr), 533);
-	linear(Sort.mergeSort(copyArray(arr), 0, arr.length - 1), 533);
+	Sort.mergeSort(copyArray(arr), 0, arr.length - 1);
+	//Perform a linear search on a sorted array
+	linear(arr, 533);
+	//Perform a binary search on a sorted array
+	binary(arr, 533);
 	}
 	/*
 	 * uses a linear search to find the index of integer parameter goal, prints time taken to search, index if found, and -1 if not found
 	 */
 	public static void linear(int[] arr, int goal) {
+		StopWatch1 s = new StopWatch1();
+		s.start();
 		Search.linearSearch(arr, goal);
+		s.stop();
+		System.out.printf("%10s%10s%10d%10s%10d%10s%10d", "\nLinear search", "Goal ", goal, "Index", Search.linearSearch(arr, goal), " Time taken", s.getElapsedTime());
 	}
 	/*
 	 * uses a binary search to find the index of integer parameter goal, prints time taken to search, index if found, and -1 if not found
 	 */
 	public static void binary(int[] arr, int goal) {
-		
+		Sort.mergeSort(arr, 0, arr.length - 1);
+		StopWatch1 s = new StopWatch1();
+		s.start();
+		Search.binarySearch(arr, goal);
+		s.stop();
+		System.out.printf("%10s%10s%10d%10s%10d%10s%10d", "\nBinary search", "Goal ", goal, " Index ", Search.binarySearch(arr, goal), " Time taken", s.getElapsedTime());
+		System.out.println(arr[Search.binarySearch(arr, goal)]);
 	}
 	/*
 	 * Defines instantiates an array of given size, then sorts said array with all five sorting algorithms, printing the time taken to sort each list. Copies of the array
@@ -72,9 +88,8 @@ public class Client {
 		Sort.quickSort(copyArray(arr), 0, arr.length - 1);
 		s.stop();
 		quick = (int) s.getElapsedTime();
-		System.out.println("With array size of " + size);
 		System.out.printf("%12d%10s%10s%10s%10s%10s", size, "Bubble", "Insertion", "Selection", "Merge", "Quick\n");
-		System.out.printf("%12s%10d%10d%10d%10d%10d", "Time", bubble, insertion, selection, merge, quick);
+		System.out.printf("%12s%10d%10d%10d%10d%10d%10s", "Time", bubble, insertion, selection, merge, quick, "\n");
 	}
 	
 	/*
@@ -104,18 +119,17 @@ public class Client {
 		selection = (int) s.getElapsedTime();
 		
 		s.start();
-		mergeSort(copyArray(arr), 0, arr.length - 1);
+		Sort.mergeSort(copyArray(arr), 0, arr.length - 1);
 		s.stop();
 		merge = (int) s.getElapsedTime();
 		
 		s.start();
-		quickSort(copyArray(arr), 0, arr.length - 1);
+		Sort.quickSort(copyArray(arr), 0, arr.length - 1);
 		s.stop();
 		quick = (int) s.getElapsedTime();
 		
-		System.out.println("With array size of " + size);
 		System.out.printf("%12d%10s%10s%10s%10s", size, "Insertion", "Selection", "Merge", "Quick\n");
-		System.out.printf("%12s%10d%10d%10d%10d", "Time", insertion, selection, merge, quick);
+		System.out.printf("%12s%10d%10d%10d%10d%10s", "Time", insertion, selection, merge, quick, "\n");
 	}
 	
 	/*
@@ -134,18 +148,17 @@ public class Client {
 		int[] arr = makeArray(size);
 		
 		s.start();
-		mergeSort(copyArray(arr), 0, arr.length - 1);
+		Sort.mergeSort(copyArray(arr), 0, arr.length - 1);
 		s.stop();
 		merge = (int) s.getElapsedTime();
 		
 		s.start();
-		quickSort(copyArray(arr), 0, arr.length - 1);
+		Sort.quickSort(copyArray(arr), 0, arr.length - 1);
 		s.stop();
 		quick = (int) s.getElapsedTime();
 		
-		System.out.println("With array size of " + size);
 		System.out.printf("%12d%10s%10s", size, "Merge", "Quick\n");
-		System.out.printf("%12s%10d%10d", "Time", merge, quick);
+		System.out.printf("%12s%10d%10d%10s", "Time", merge, quick, "\n");
 	}
 	/*
 	 * Defines and instantiates an array of size 200k, sorts said array, then times each sort(excluding bubble) and prints the results
@@ -160,32 +173,32 @@ public class Client {
 		int quick = 0;
 		
 		int[] arr = makeArray(200000);
-		quickSort(arr, 0, arr.length - 1);
+		Sort.quickSort(arr, 0, arr.length - 1);
 		
 		StopWatch1 s = new StopWatch1();
 		s.start();
-		insertionSort(arr);
+		Sort.insertionSort(arr);
 		s.stop();
 		insertion = (int) s.getElapsedTime();
 		
 		s.start();
-		selectionSort(arr);
+		Sort.selectionSort(arr);
 		s.stop();
 		selection = (int) s.getElapsedTime();
 		
 		s.start();
-		mergeSort(arr, 0, arr.length - 1);
+		Sort.mergeSort(arr, 0, arr.length - 1);
 		s.stop();
 		merge = (int) s.getElapsedTime();
 		
 		s.start();
-		quickSort(arr, 0, arr.length - 1);
+		Sort.quickSort(arr, 0, arr.length - 1);
 		s.stop();
 		quick = (int) s.getElapsedTime();
 		
 		System.out.println("Sort a sorted data set of 200,000");
 		System.out.printf("%12d%10s%10s%10s%10s", 200000, "Insertion", "Selection", "Merge", "Quick\n");
-		System.out.printf("%12s%10d%10d%10d%10d", "Time", insertion, selection, merge, quick);
+		System.out.printf("%12s%10d%10d%10d%10d%10s", "Time", insertion, selection, merge, quick, "\n");
 	}
 	/*
 	 * Defines and instantiates an array of size 200k, reverse sorts said array, then times each sort(excluding bubble) and prints the results
@@ -198,35 +211,35 @@ public class Client {
 		int merge = 0;
 		int quick = 0;
 		int[] arr = makeArray(200000);
-		mergeSort(arr, 0, arr.length - 1);
+		Sort.mergeSort(arr, 0, arr.length - 1);
 		for(int i = arr.length; i > 0; i--) {
 			arr[i] = arr.length - i;
 		}
 		
 		StopWatch1 s = new StopWatch1();
 		s.start();
-		insertionSort(arr);
+		Sort.insertionSort(arr);
 		s.stop();
 		insertion = (int) s.getElapsedTime();
 		
 		s.start();
-		selectionSort(arr);
+		Sort.selectionSort(arr);
 		s.stop();
 		selection = (int) s.getElapsedTime();
 		
 		s.start();
-		mergeSort(arr, 0, arr.length - 1);
+		Sort.mergeSort(arr, 0, arr.length - 1);
 		s.stop();
 		merge = (int) s.getElapsedTime();
 		
 		s.start();
-		quickSort(arr, 0, arr.length - 1);
+		Sort.quickSort(arr, 0, arr.length - 1);
 		s.stop();
 		quick = (int) s.getElapsedTime();
 		
 		System.out.println("Sort a reverse sorted data set of 200,000");
 		System.out.printf("%12d%10s%10s%10s%10s", 200000, "Insertion", "Selection", "Merge", "Quick\n");
-		System.out.printf("%12s%10d%10d%10d%10d", "Time", insertion, selection, merge, quick);
+		System.out.printf("%12s%10d%10d%10d%10d%10s", "Time", insertion, selection, merge, quick, "\n");
 	}
 	/*
 	 * Defines and instantiates an array of size 200k, with each value being random from 1-20, then times each sort(excluding bubble) and prints the results
@@ -245,28 +258,28 @@ public class Client {
 		
 		StopWatch1 s = new StopWatch1();
 		s.start();
-		insertionSort(arr);
+		Sort.insertionSort(arr);
 		s.stop();
 		insertion = (int) s.getElapsedTime();
 		
 		s.start();
-		selectionSort(arr);
+		Sort.selectionSort(arr);
 		s.stop();
 		selection = (int) s.getElapsedTime();
 		
 		s.start();
-		mergeSort(arr, 0, arr.length - 1);
+		Sort.mergeSort(arr, 0, arr.length - 1);
 		s.stop();
 		merge = (int) s.getElapsedTime();
 		
 		s.start();
-		quickSort(arr, 0, arr.length - 1);
+		Sort.quickSort(arr, 0, arr.length - 1);
 		s.stop();
 		quick = (int) s.getElapsedTime();
 		
 		System.out.println("Sort a sorted data set of 200,000");
 		System.out.printf("%12d%10s%10s%10s%10s", 200000, "Insertion", "Selection", "Merge", "Quick\n");
-		System.out.printf("%12s%10d%10d%10d%10d", "Time", insertion, selection, merge, quick);
+		System.out.printf("%12s%10d%10d%10d%10d%10s", "Time", insertion, selection, merge, quick, "\n");
 	}
 	
 	/*
@@ -277,31 +290,31 @@ public class Client {
 				System.out.println("Bubble Sort");
 				int[] arr1 = makeArray();
 				printArray(arr1);
-				bubbleSort(arr1);
+				Sort.bubbleSort(arr1);
 				printArray(arr1);
 				
 				System.out.println("Insertion Sort");
 				int[] arr2 = makeArray();
 				printArray(arr2);
-				insertionSort(arr2);
+				Sort.insertionSort(arr2);
 				printArray(arr2);
 				
 				System.out.println("Selection Sort");
 				int[] arr3 = makeArray();
 				printArray(arr3);
-				selectionSort(arr3);
+				Sort.selectionSort(arr3);
 				printArray(arr3);
 				
 				System.out.println("Merge Sort");
 				int[] arr4 = makeArray();
 				printArray(arr4);
-				mergeSort(arr4, 0, arr4.length-1);
+				Sort.mergeSort(arr4, 0, arr4.length-1);
 				printArray(arr4);
 				
 				System.out.println("Quick Sort");
 				int[] arr5 = makeArray();
 				printArray(arr5);
-				quickSort(arr5, 0, arr5.length-1);
+				Sort.quickSort(arr5, 0, arr5.length-1);
 				printArray(arr5);
 	}
 	/*
