@@ -1,0 +1,77 @@
+Bubble Sort
+13 -20 15 11 -13 -9 -20 18 -3 14 6 1 -11 -3 6 1 6 -7 -10 18 
+
+-20 -20 -13 -11 -10 -9 -7 -3 -3 1 1 6 6 6 11 13 14 15 18 18 
+
+Insertion Sort
+-19 5 19 6 -14 -13 4 -4 -1 5 -20 -14 14 10 9 -7 8 5 -20 4 
+
+-20 -20 -19 -14 -14 -13 -7 -4 -1 4 4 5 5 5 6 8 9 10 14 19 
+
+Selection Sort
+-17 -15 0 -17 20 -17 -9 0 -17 -5 -6 -16 1 18 -8 -16 -6 -9 -5 -20 
+
+-20 -17 -17 -17 -17 -16 -16 -15 -9 -9 -8 -6 -6 -5 -5 0 0 1 18 20 
+
+Merge Sort
+0 4 -3 10 8 -13 14 -14 13 19 -7 14 18 9 16 15 15 8 -19 -20 
+
+-20 -19 -14 -13 -7 -3 0 4 8 8 9 10 13 14 14 15 15 16 18 19 
+
+Quick Sort
+-3 -19 12 11 6 7 -2 -4 1 -5 -5 1 -7 -15 -13 19 12 11 -12 11 
+
+-19 -15 -13 -12 -7 -5 -5 -4 -3 -2 1 1 6 7 11 11 11 12 12 19 
+
+        1000    Bubble Insertion Selection     Merge    Quick
+        Time        15        21        10         3         1         
+        5000    Bubble Insertion Selection     Merge    Quick
+        Time        53        81        63         4        75         
+       10000    Bubble Insertion Selection     Merge    Quick
+        Time       372       288       266         0         0         
+       50000    Bubble Insertion Selection     Merge    Quick
+        Time      5266      6829      5341        15         0         
+      100000 Insertion Selection     Merge    Quick
+        Time     28274     24712        32        15       
+      500000 Insertion Selection     Merge    Quick
+        Time     43926     42512        56        49
+      With array size of 1000000
+        1000000     Merge    Quick
+           Time       975       301         
+      With array size of 5000000
+        5000000     Merge    Quick
+           Time      3597      1573         
+      200000    Bubble Insertion Selection     Merge    Quick
+        Time    173448    267688    180050       106        55
+      Sort a sorted data set of 200,000
+      200000    Insertion Selection     Merge    Quick
+        Time    10969     54323        17        29
+      Sort a reverse sorted data set of 200,000
+      200000    Insertion Selection     Merge    Quick
+        Time    10246     54856        17        25
+      Sort a sorted data set of 200,000 with random values 1-20
+      200000    Insertion Selection     Merge    Quick
+	Time    11433      9835        12        19
+Linear search - unsorted array
+
+Linear search     Goal    4106713     Index        -1 Time taken        13
+Linear search     Goal    2162277     Index   2544241 Time taken         3
+Linear search     Goal    3751966     Index   4122127 Time taken        10
+Linear search     Goal     456923     Index   4470465 Time taken         5
+Linear search     Goal    2444598     Index   2658392 Time taken         2
+
+Linear search - sorted array
+
+Linear search     Goal     161298     Index        -1 Time taken         5
+Linear search     Goal    3739930     Index   3738450 Time taken         4
+Linear search     Goal    3678798     Index        -1 Time taken         5
+Linear search     Goal    2986414     Index        -1 Time taken         5
+Linear search     Goal    3476857     Index   3475109 Time taken         4
+
+Binary search - sorted array
+
+Binary search     Goal    1618745    Index    1618333 Time taken         0
+Binary search     Goal     825477    Index     826603 Time taken         0
+Binary search     Goal    4120755    Index    4119656 Time taken         0
+Binary search     Goal    3746094    Index    3744526 Time taken         0
+Binary search     Goal    3487371    Index    3485683 Time taken         0

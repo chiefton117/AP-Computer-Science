@@ -1,10 +1,14 @@
-
+/*
+ * @author Tim Harrold
+ * Client class for the Sorts and Searches algorithms written as accompaniment, inclusive of a bubble sort, insertion sort, selection sort, merge sort, quick sort, linear search and binary search
+ */
 public class Client {
 
 	public static void main(String[] args) {
 		
-	sortAll(1000);
-	sortAll(5000);
+	partOne();
+	//sortAll(1000);
+	//sortAll(5000);
 	//sortAll(10000);
 	//sortAll(50000);
 	//sortFour(100000);
@@ -18,12 +22,23 @@ public class Client {
 	int[] arr = makeArray(5000000);
 	
 	//Perform a linear search on an unsorted array
-	linear(copyArray(arr), 533);
-	Sort.mergeSort(copyArray(arr), 0, arr.length - 1);
+	System.out.println("Linear search - unsorted array");
+	for(int i = 0; i < 5; i++) {
+	linear(copyArray(arr), 1 + (int)(Math.random() * ((arr.length - 1) + 1)) );
+	}
+	//Sort the array for further searches
+	Sort.mergeSort(arr, 0, arr.length - 1);
+	
 	//Perform a linear search on a sorted array
-	linear(arr, 533);
+	System.out.println("\nLinear search - sorted array");
+	for(int i = 0; i < 5; i++) {
+	linear(arr, 1 + (int)(Math.random() * ((arr.length - 1) + 1)) );
+	}
 	//Perform a binary search on a sorted array
-	binary(arr, 533);
+	System.out.println("\nBinary search - sorted array");
+	for(int i = 0; i < 5; i++) {
+	binary(arr, 1 + (int)(Math.random() * ((arr.length - 1) + 1)) );
+	}
 	}
 	/*
 	 * uses a linear search to find the index of integer parameter goal, prints time taken to search, index if found, and -1 if not found
@@ -45,7 +60,6 @@ public class Client {
 		Search.binarySearch(arr, goal);
 		s.stop();
 		System.out.printf("%10s%10s%10d%10s%10d%10s%10d", "\nBinary search", "Goal ", goal, " Index ", Search.binarySearch(arr, goal), " Time taken", s.getElapsedTime());
-		System.out.println(arr[Search.binarySearch(arr, goal)]);
 	}
 	/*
 	 * Defines instantiates an array of given size, then sorts said array with all five sorting algorithms, printing the time taken to sort each list. Copies of the array
@@ -277,7 +291,7 @@ public class Client {
 		s.stop();
 		quick = (int) s.getElapsedTime();
 		
-		System.out.println("Sort a sorted data set of 200,000");
+		System.out.println("Sort a sorted data set of 200,000 with random values 1-20");
 		System.out.printf("%12d%10s%10s%10s%10s", 200000, "Insertion", "Selection", "Merge", "Quick\n");
 		System.out.printf("%12s%10d%10d%10d%10d%10s", "Time", insertion, selection, merge, quick, "\n");
 	}

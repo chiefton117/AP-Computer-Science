@@ -45,9 +45,12 @@ public class Search
 	 */
 	public static int doBinarySearch(int[] list, int num, int min, int max)
 	{
-
+		if(list.length > 1) {
 		int val = (min + max) / 2;
-		if(list[val] == num) {
+		if(list[val] == 0) {
+			return -1;
+		}
+		else if(list[val] == num) {
 			return val;
 		}
 		else if(num > list[val]) {
@@ -56,12 +59,14 @@ public class Search
 		else {
 			return doBinarySearch(list, num, min, val - 1);
 		}
+		}
+		else return -1;
 		  
 	}
 	/*
 	 * Simplified calling method for binarySearch, allowing the client to call the method without passing the necessary parameters
 	 */
 	public static int binarySearch(int[] list, int num) {
-		return doBinarySearch(list, num, 0, list.length - 1);
+		return doBinarySearch(list, num, 0, list.length);
 	}
 }
